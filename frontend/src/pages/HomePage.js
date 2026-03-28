@@ -263,11 +263,7 @@ export default function HomePage() {
       {/* ── FOOTER ── */}
       <footer style={{ padding:'32px 24px', borderTop:'1px solid var(--border)', textAlign:'center' }}>
         <div style={{ fontFamily:'var(--font-mono)', fontSize:12, color:'var(--text-muted)' }}>
-          © 2025 ATTER — NIST Institute of Science & Technology, Berhampur, Odisha
-          <span style={{ margin:'0 12px' }}>|</span>
-          Research Paper: INJRD Conference
-          <span style={{ margin:'0 12px' }}>|</span>
-          Built with ❤️ for Emergency Response
+          © 2026 ATTER
         </div>
       </footer>
     </div>
