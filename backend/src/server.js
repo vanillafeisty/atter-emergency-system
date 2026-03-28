@@ -39,23 +39,19 @@ if (!MONGO_URI) {
   process.exit(1);
 }
 
-mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 10000 })
-  .then(() => {
-    console.log('MongoDB connected successfully');
-    const PORT = parseInt(process.env.PORT) || 5000;
-    server.listen(PORT, '0.0.0.0', () => {
-      console.log('ATTER Server running on port ' + PORT);
-    });
-  })
-  .catch((err) => {
-    console.error('MongoDB connection error:', err.message);
-    const PORT = parseInt(process.env.PORT) || 5000;
-    server.listen(PORT, '0.0.0.0', () => {
-      console.log('Server on port ' + PORT + ' - DB failed');
-      process.exit(1);
-    });
+mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 10000 }).then(function() {
+  console.log('MongoDB connected successfully');
+  var PORT = parseInt(process.env.PORT) || 5000;
+  server.listen(PORT, '0.0.0.0', function() {
+    console.log('ATTER Server running on port ' + PORT);
   });
+}).catch(function(err) {
+  console.error('MongoDB connection error: ' + err.message);
+  var PORT = parseInt(process.env.PORT) || 5000;
+  server.listen(PORT, '0.0.0.0', function() {
+    console.log('Server on port ' + PORT + ' DB failed');
+    process.exit(1);
+  });
+});
 
-module.exports = { app, io };
-```
-
+module.exports = { app: app, io: io };
