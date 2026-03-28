@@ -1,0 +1,11 @@
+{
+  "name": "atter-system",
+  "version": "1.0.0",
+  "description": "ATTER Emergency Response System - Monorepo",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build:frontend": "cd frontend && npm run build"
+  }
+}
